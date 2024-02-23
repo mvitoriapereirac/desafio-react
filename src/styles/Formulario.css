@@ -1,0 +1,57 @@
+/* formulario.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+}
+
+
+.formulario form {
+    display: flex;
+    flex-direction: column;
+}
+
+.formulario form {
+    display: flex;
+    flex-direction: column;
+}
+
+.formulario form > * {
+    margin-bottom: 40px; 
+    
+}
+
+.formulario h2 {
+    background-color: rgba(57, 130, 173, 1);
+    color: white;
+    font-style: normal;
+   
+
+
+}
+
+.btn-primary {
+    background-color: rgba(70, 156, 48, 1);
+}
+
+.see {
+    background-color: blue;
+}
+
+
+

@@ -1,4 +1,6 @@
 import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../styles/LoadingModal.css'
 
 const LoadingModal = () => {
     return (
@@ -14,6 +16,16 @@ const LoadingModal = () => {
                 </div>
             </div>
         </div>
+    // <div class="modal" id="modal-loading" data-backdrop="static">
+    //     <div class="modal-dialog modal-sm">
+    //         <div class="modal-content">
+    //         <div class="modal-body text-center">
+    //             <div class="loading-spinner mb-2"></div>
+    //             <div>Carregando</div>
+    //         </div>
+    //         </div>
+    //     </div>
+// </div>
     );
 };
 
