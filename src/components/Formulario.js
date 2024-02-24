@@ -6,6 +6,8 @@ import FornecedorForm from './Fornecedor';
 import ProdutosTable from './Produto';
 import DocumentosTable from './Documentos';
 import '../styles/Formulario.css'; 
+import '../styles/LoadingModal.css'; // Import the loading modal CSS file
+
 
 
 const Formulario = () => {
@@ -166,7 +168,9 @@ const handleUploadDocument = (e, index) => {
         const reader = new FileReader();
 
         reader.onload = () => {
-            const documentBlob = new Blob([reader.result], { type: file.type }); 
+            const documentBlob = new Blob([reader.result], { type: file.type }); //Esse dado serve para permitir que o usuario visualize o documento e nao sua versao encriptada ao clicar em "ver"
+            const base64String = reader.result; //A FAZER: usar esse valor para popular o formData
+
 
             const documentData = {
                 nome: file.name,
@@ -187,7 +191,6 @@ const handleUploadDocument = (e, index) => {
     }
 };
 
-  
 
   const handleDeleteDocument = (index) => {
     const newDocumentos = [...formData.documentos];
@@ -220,8 +223,12 @@ const handleUploadDocument = (e, index) => {
     }
 };
 
+
+
+
 const handleSubmit = async (e) => {
     e.preventDefault();
+    setShowLoadingModal(true);
 
     if (formData.produtos.length < 1 || formData.documentos.length < 1) {
         alert('Por favor adicione pelo menos um produto e um documento.');
@@ -233,7 +240,6 @@ const handleSubmit = async (e) => {
     console.log(formData.produtos.length)
 
     console.log(formData.documentos.length)
-    setShowLoadingModal(true);
 
     try {
         const supplierDataJSON = JSON.stringify(formData);
@@ -252,8 +258,8 @@ const handleSubmit = async (e) => {
     } catch (error) {
         console.error('Error submitting form:', error);
     } finally {
-        setShowLoadingModal(false);
     }
+
 };
 
   
